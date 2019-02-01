@@ -16,7 +16,7 @@ func Now() string {
 	return time.Now().Format(FORMAT)
 }
 
-func NowTime() time.Time  {
+func NowTime() time.Time {
 	return time.Now()
 }
 

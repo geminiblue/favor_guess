@@ -7,11 +7,13 @@ import (
 	"github.com/geminiblue/favor_guess/libs"
 	"runtime"
 )
+
 var (
-	env      string
-	key      string
-	addr     string
+	env  string
+	key  string
+	addr string
 )
+
 func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	flag.StringVar(&env, "env", "dev", "启动环境")
@@ -19,12 +21,12 @@ func init() {
 	flag.StringVar(&addr, "addr", "127.0.0.1:19840", "api服务启动端口")
 	flag.Parse()
 }
-func main()  {
+func main() {
 	fmt.Println(libs.Now())
 	application := app.App{
-		Env:env,
-		Secret:key,
-		Addr:addr,
+		Env:    env,
+		Secret: key,
+		Addr:   addr,
 	}
 	application.Run()
 }

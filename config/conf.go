@@ -15,11 +15,11 @@ var Env string
 var Secret string
 
 type Config struct {
-	Application string          `json:"application"`
-	Db          DbConfig        `json:"db"`
-	DbSlaver    DbConfig        `json:"db_slaver"`
-	MicroApp    MicroAppConfig  `json:"micro_app"`
-	Redis       cluster         `json:"redis"`
+	Application string         `json:"application"`
+	Db          DbConfig       `json:"db"`
+	DbSlaver    DbConfig       `json:"db_slaver"`
+	MicroApp    MicroAppConfig `json:"micro_app"`
+	Redis       cluster        `json:"redis"`
 }
 type DbConfig struct {
 	Host         string `json:"host"`
@@ -67,6 +67,7 @@ type RemoteResult struct {
 	Message string        `json:"message"`
 	Status  int           `json:"status"`
 }
+
 //如果存在错误，则输出
 func failOnError(err error, msg string) {
 	if err != nil {
@@ -78,8 +79,8 @@ func GetConfig() *Config {
 	url := fmt.Sprintf("https://geminiblue:gemini4094@c.oliyo.com/config/get/favor_guess/%s", Env)
 	res, err := http.Get(url)
 	if err != nil || res.StatusCode != http.StatusOK {
-		log.Fatalf("读取配置文件失败,[%s]文件不存在,%s" ,url,err.Error())
-		panic(err)
+		log.Fatalf("读取配置文件失败,[%s]文件不存在,%s", url, err.Error())
+		//panic(err)
 	}
 	defer res.Body.Close()
 	var remote RemoteResult

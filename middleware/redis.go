@@ -14,7 +14,7 @@ func RedisFactory(name string) *redis.Client {
 	var auth string
 	if name == "master" {
 		address = fmt.Sprintf("%s:%s", config.AppConfig.Redis.Master.Host, config.AppConfig.Redis.Master.Port)
-		auth =config.AppConfig.Redis.Master.Auth
+		auth = config.AppConfig.Redis.Master.Auth
 	}
 	if name == "slaver" {
 		address = fmt.Sprintf("%s:%s", config.AppConfig.Redis.Slaver.Host, config.AppConfig.Redis.Slaver.Port)
