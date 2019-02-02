@@ -18,6 +18,8 @@ github.com/go-redis/redis v6.15.1+incompatible h1:BZ9s4/vHrIqwOb0OPtTQ5uABxETJ3N
 github.com/go-redis/redis v6.15.1+incompatible/go.mod h1:NAIEuMOZ/fxfXJIrKDQDz8wamY7mA7PouImQ2Jvg6kA=
 github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/medivhzhan/weapp v1.1.1 h1:wIfpX8IDgpo6RTPnQptS0Ehowpk+T63R0RxXwBtirrk=
+github.com/medivhzhan/weapp v1.1.1/go.mod h1:JyOsdCQsSt+i4bq0zyrn8RTZNk0wlu5FM4nGSIaUZqs=
 github.com/tealeg/xlsx v1.0.3 h1:BXsDIQYBPq2HgbwUxrsVXIrnO0BDxmsdUfHSfvwfBuQ=
 github.com/tealeg/xlsx v1.0.3/go.mod h1:uxu5UY2ovkuRPWKQ8Q7JG0JbSivrISjdPzZQKeo74mA=
 github.com/xormplus/builder v0.0.0-20181220055446-b12ceebee76f h1:1kd2rgJuSRqTCUSqFkKuaUNsNogLzjPhC9Pr8qnhZDs=

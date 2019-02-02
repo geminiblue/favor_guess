@@ -11,6 +11,7 @@ require (
 	github.com/fsnotify/fsnotify v1.4.7 // indirect
 	github.com/go-redis/redis v6.15.1+incompatible
 	github.com/go-sql-driver/mysql v1.4.1
+	github.com/medivhzhan/weapp v1.1.1 // indirect
 	github.com/tealeg/xlsx v1.0.3 // indirect
 	github.com/xormplus/builder v0.0.0-20181220055446-b12ceebee76f // indirect
 	github.com/xormplus/core v0.0.0-20190120064039-da7907271e2f

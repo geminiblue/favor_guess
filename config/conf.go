@@ -93,6 +93,5 @@ func GetConfig() *Config {
 	decryptBody := []byte(libs.Decrypt(string(remote.Data.Content), Secret))
 	err = json.Unmarshal(decryptBody, &AppConfig)
 	failOnError(err, "读取配置文件失败,json解析失败")
-	log.Println("成功获取并解析到配置文件")
 	return AppConfig
 }

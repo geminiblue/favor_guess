@@ -22,8 +22,8 @@ func FailOnError(err error, msg string) {
 func InitDbConnection() {
 	InitMaster()
 	InitSlaver()
-	//go mysqlPingMaster()
-	//go mysqlPingSlaver()
+	go mysqlPingMaster()
+	go mysqlPingSlaver()
 }
 func InitMaster() {
 	var err error
@@ -40,6 +40,10 @@ func InitMaster() {
 	Db.ShowExecTime(true)
 	Db.SetMaxIdleConns(config.AppConfig.Db.MaxIdleConns)
 	Db.SetMaxOpenConns(config.AppConfig.Db.MaxOpenConns)
+	err = Db.Ping()
+	if err!=nil {
+		log.Fatalf("数据主库连接失败%s",err.Error())
+	}
 }
 func InitSlaver() {
 	var err error
@@ -55,11 +59,13 @@ func InitSlaver() {
 	FailOnError(err, "读取sql配置文件失败")
 	DbSlaver.TZLocation, _ = time.LoadLocation("Asia/Shanghai")
 	DbSlaver.ShowSQL(true)
-	//DbSlaver.Sho
 	DbSlaver.Logger().SetLevel(core.LOG_DEBUG)
-	//DbSlaver.ShowExecTime(true)
 	DbSlaver.SetMaxIdleConns(config.AppConfig.DbSlaver.MaxIdleConns)
 	DbSlaver.SetMaxOpenConns(config.AppConfig.DbSlaver.MaxOpenConns)
+	err = DbSlaver.Ping()
+	if err!=nil {
+		log.Fatalf("数据从库连接失败%s",err.Error())
+	}
 }
 func mysqlPingMaster() {
 	ticker := time.NewTicker(time.Second * time.Duration(60))

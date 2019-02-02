@@ -2,9 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"github.com/geminiblue/favor_guess/app"
-	"github.com/geminiblue/favor_guess/libs"
 	"runtime"
 )
 
@@ -22,7 +20,6 @@ func init() {
 	flag.Parse()
 }
 func main() {
-	fmt.Println(libs.Now())
 	application := app.App{
 		Env:    env,
 		Secret: key,

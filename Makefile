@@ -1,4 +1,4 @@
-COMPILE_TIME = $(shell date +"%Y%M%d%H%M%S")
+COMPILE_TIME = $(shell date +"%Y%M%d%H")
 GIT_REVISION = $(shell git show -s --pretty=format:%h)
 CFLAGS += "\"$(GIT_REVISION)\""
 build:
