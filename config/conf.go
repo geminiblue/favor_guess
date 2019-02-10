@@ -13,6 +13,7 @@ import (
 var AppConfig *Config
 var Env string
 var Secret string
+var ApiAddr string
 
 type Config struct {
 	Application string         `json:"application"`

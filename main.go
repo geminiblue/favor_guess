@@ -25,5 +25,6 @@ func main() {
 		Secret: key,
 		Addr:   addr,
 	}
+
 	application.Run()
 }

@@ -1,9 +1,11 @@
 package app
 
 import (
+	"log"
+
+	"github.com/geminiblue/favor_guess/api"
 	"github.com/geminiblue/favor_guess/config"
 	"github.com/geminiblue/favor_guess/middleware"
-	"log"
 )
 
 type App struct {
@@ -16,6 +18,7 @@ type App struct {
 func (app App) setConfig() {
 	config.Env = app.Env
 	config.Secret = app.Secret
+	config.ApiAddr = app.Addr
 	config.GetConfig()
 	log.Printf("%s 程序开始执行", config.AppConfig.Application)
 }
@@ -30,5 +33,6 @@ func (app App) initMiddleware() {
 func (app App) Run() {
 	app.setConfig()
 	app.initMiddleware()
+	go api.Run()
 	select {}
 }
